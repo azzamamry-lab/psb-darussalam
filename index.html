@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PSB Online — PPTQ Darus Salam Mojogedang</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@400;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --hijau:#065f46;--hijau-2:#047857;--hijau-3:#059669;--hijau-muda:#d1fae5;--hijau-muda-2:#a7f3d0;
+  --emas:#d97706;--emas-2:#f59e0b;--emas-muda:#fef3c7;
+  --tinta:#0f172a;--redup:#475569;--garis:#e2e8f0;--putih:#fff;--abu:#f8fafc;
+  --r:16px;--shadow:0 4px 24px rgba(6,95,70,.10);--shadow-lg:0 12px 40px rgba(6,95,70,.18);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Plus Jakarta Sans',system-ui,sans-serif;background:var(--abu);color:var(--tinta);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+
+/* ===== HERO ===== */
+.hero{
+  background:linear-gradient(150deg,var(--hijau) 0%,var(--hijau-2) 55%,#064e3b 100%);
+  color:#fff;padding:48px 20px 72px;text-align:center;position:relative;overflow:hidden;
+}
+.hero::before{content:'';position:absolute;inset:0;
+  background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0C30 0 60 10 60 30C60 50 30 60 30 60C30 60 0 50 0 30C0 10 30 0 30 0Z' fill='none' stroke='rgba(255,255,255,.05)' stroke-width='1'/%3E%3C/svg%3E") repeat;
+  opacity:.6;pointer-events:none}
+.hero::after{content:'';position:absolute;bottom:-1px;left:0;right:0;height:40px;
+  background:var(--abu);clip-path:ellipse(55% 100% at 50% 100%)}
+
+.logo-box{width:80px;height:80px;border-radius:20px;background:rgba(255,255,255,.15);
+  border:2px solid rgba(255,255,255,.3);display:flex;align-items:center;justify-content:center;
+  margin:0 auto 16px;backdrop-filter:blur(8px);font-size:28px;font-weight:800;color:#fff;
+  box-shadow:0 8px 32px rgba(0,0,0,.2)}
+.badge-tahun{display:inline-flex;align-items:center;gap:6px;
+  background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);
+  border-radius:999px;padding:5px 14px;font-size:12.5px;font-weight:600;
+  letter-spacing:.5px;margin-bottom:16px;backdrop-filter:blur(4px)}
+.badge-tahun span{width:7px;height:7px;border-radius:50%;background:var(--emas-2);
+  box-shadow:0 0 0 3px rgba(245,158,11,.3);animation:denyut 1.8s ease-in-out infinite}
+@keyframes denyut{0%,100%{box-shadow:0 0 0 3px rgba(245,158,11,.3)}50%{box-shadow:0 0 0 6px rgba(245,158,11,.1)}}
+
+.hero-arabic{font-family:'Aref Ruqaa',serif;font-size:36px;line-height:1.4;
+  color:rgba(255,255,255,.95);margin-bottom:8px;
+  text-shadow:0 2px 12px rgba(0,0,0,.2)}
+.hero h1{font-size:clamp(20px,4vw,26px);font-weight:800;line-height:1.25;margin-bottom:8px}
+.hero .sub{font-size:15px;opacity:.88;margin-bottom:4px}
+.hero .alamat{font-size:13px;opacity:.75;margin-bottom:6px}
+.hero .tagline{font-size:13.5px;opacity:.85;font-style:italic;
+  background:rgba(255,255,255,.1);border-radius:8px;
+  display:inline-block;padding:6px 14px;margin-top:8px}
+
+/* ===== WRAPPER ===== */
+.wrap{max-width:680px;margin:0 auto;padding:0 16px}
+
+/* ===== MAIN ===== */
+main{margin-top:-32px;padding-bottom:60px}
+
+/* ===== KARTU ===== */
+.kartu{background:#fff;border-radius:var(--r);box-shadow:var(--shadow);
+  padding:24px;margin-bottom:16px;border:1px solid rgba(6,95,70,.06)}
+
+/* ===== STEPS / CARA DAFTAR ===== */
+.step-wrap{display:flex;gap:12px;align-items:flex-start}
+.step-num{flex-shrink:0;width:36px;height:36px;border-radius:50%;
+  background:var(--hijau-muda);color:var(--hijau);font-weight:800;font-size:15px;
+  display:flex;align-items:center;justify-content:center;margin-top:2px}
+.step-body h3{font-size:15px;font-weight:700;color:var(--tinta);margin-bottom:3px}
+.step-body p{font-size:14px;color:var(--redup);line-height:1.5}
+.step-garis{width:2px;height:20px;background:var(--hijau-muda);margin:4px 0 4px 17px}
+
+/* ===== FITUR GRID ===== */
+.fitur-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:14px}
+.fitur-item{background:var(--abu);border:1px solid var(--garis);border-radius:12px;
+  padding:14px 12px;display:flex;align-items:flex-start;gap:10px;
+  transition:transform .2s,box-shadow .2s}
+.fitur-item:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
+.fitur-ikon{font-size:22px;flex-shrink:0;margin-top:1px}
+.fitur-item h4{font-size:13.5px;font-weight:700;color:var(--hijau);margin-bottom:2px}
+.fitur-item p{font-size:12.5px;color:var(--redup);line-height:1.45}
+
+/* ===== BERKAS ===== */
+.berkas-list{list-style:none;display:grid;gap:8px;margin-top:14px}
+.berkas-list li{display:flex;align-items:center;gap:10px;
+  background:var(--abu);border-radius:10px;padding:10px 12px;
+  font-size:14px;color:var(--tinta)}
+.berkas-list li span.check{width:22px;height:22px;border-radius:50%;
+  background:var(--hijau-muda);color:var(--hijau);display:flex;align-items:center;
+  justify-content:center;font-size:12px;font-weight:700;flex-shrink:0}
+
+/* ===== BROSUR ===== */
+.brosur-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}
+.brosur-btn{display:flex;align-items:center;justify-content:space-between;
+  gap:8px;padding:12px 14px;border-radius:12px;border:1.5px solid var(--garis);
+  background:#fff;font-size:13.5px;font-weight:600;cursor:pointer;
+  transition:all .2s;color:var(--tinta)}
+.brosur-btn:hover{border-color:var(--hijau-3);background:var(--hijau-muda);color:var(--hijau)}
+.brosur-btn .ikon{font-size:18px}
+.brosur-btn .label{font-size:11.5px;color:var(--redup);font-weight:400;display:block;margin-top:1px}
+
+/* ===== BIAYA ===== */
+.biaya-box{background:linear-gradient(135deg,var(--emas-muda),#fff9e6);
+  border:1.5px solid var(--emas-2);border-radius:14px;padding:18px 20px;
+  display:flex;align-items:center;gap:14px;margin-top:14px}
+.biaya-ikon{font-size:32px;flex-shrink:0}
+.biaya-nominal{font-size:26px;font-weight:800;color:var(--emas);line-height:1.1}
+.biaya-sub{font-size:13px;color:var(--redup)}
+
+/* ===== TOMBOL ===== */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;
+  padding:15px 24px;border-radius:999px;font-weight:700;font-size:15.5px;
+  font-family:inherit;cursor:pointer;border:none;transition:all .22s;width:100%;
+  text-decoration:none}
+.btn-hijau{background:linear-gradient(135deg,var(--hijau-3),var(--hijau-2));color:#fff;
+  box-shadow:0 8px 24px rgba(5,150,105,.35)}
+.btn-hijau:hover{transform:translateY(-2px);box-shadow:0 12px 32px rgba(5,150,105,.45)}
+.btn-outline{background:#fff;color:var(--hijau);border:2px solid var(--hijau-3);
+  box-shadow:0 4px 12px rgba(6,95,70,.10)}
+.btn-outline:hover{background:var(--hijau-muda)}
+.btn-wa{background:linear-gradient(135deg,#25d366,#128c7e);color:#fff;
+  box-shadow:0 8px 24px rgba(37,211,102,.3)}
+.btn-wa:hover{transform:translateY(-2px)}
+.btn svg{flex-shrink:0}
+.btn-row{display:flex;flex-direction:column;gap:10px;margin-top:18px}
+
+/* ===== CEK STATUS ===== */
+.cek-box{background:linear-gradient(135deg,#eff6ff,#dbeafe);
+  border:1.5px solid #93c5fd;border-radius:14px;padding:18px 20px;
+  display:flex;align-items:center;gap:14px;margin-top:14px;cursor:pointer;
+  transition:all .2s}
+.cek-box:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(37,99,235,.12)}
+.cek-ikon{font-size:30px;flex-shrink:0}
+.cek-teks h4{font-size:15px;font-weight:700;color:#1d4ed8;margin-bottom:2px}
+.cek-teks p{font-size:13px;color:#3b82f6}
+.cek-arrow{margin-left:auto;font-size:20px;color:#3b82f6}
+
+/* ===== CONTACT ===== */
+.kontak-box{display:flex;align-items:center;gap:12px;padding:14px 16px;
+  background:#fff;border-radius:12px;border:1px solid var(--garis)}
+.kontak-box .k-ikon{font-size:24px;flex-shrink:0}
+.kontak-box .k-label{font-size:12px;color:var(--redup);font-weight:600;margin-bottom:2px}
+.kontak-box .k-val{font-size:14.5px;font-weight:700;color:var(--tinta)}
+
+/* ===== SECTION HEADER ===== */
+.sek-judul{font-size:17px;font-weight:800;color:var(--hijau);margin-bottom:4px;
+  display:flex;align-items:center;gap:8px}
+.sek-sub{font-size:13.5px;color:var(--redup);margin-bottom:0}
+
+/* ===== DIVIDER ===== */
+hr.soft{border:none;border-top:1px solid var(--garis);margin:16px 0}
+
+/* ===== FOOTER ===== */
+footer{text-align:center;padding:28px 16px 40px;font-size:13px;color:var(--redup)}
+footer strong{color:var(--hijau)}
+
+/* ===== ANIMASI REVEAL ===== */
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .5s ease,transform .5s ease}
+.reveal.on{opacity:1;transform:none}
+
+/* ===== COUNTDOWN DUMMY ===== */
+.countdown{display:flex;gap:8px;justify-content:center;margin-top:14px}
+.cd-box{background:var(--hijau);color:#fff;border-radius:10px;padding:10px 14px;
+  text-align:center;min-width:58px}
+.cd-val{font-size:24px;font-weight:800;line-height:1}
+.cd-lab{font-size:10px;opacity:.8;text-transform:uppercase;letter-spacing:.5px;margin-top:3px}
+
+/* ===== MOBILE ===== */
+@media(max-width:480px){
+  .fitur-grid{grid-template-columns:1fr}
+  .brosur-grid{grid-template-columns:1fr}
+  .countdown{flex-wrap:wrap}
+}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap">
+    <div class="logo-box">🕌</div>
+    <div class="badge-tahun"><span></span> PSB Tahun Ajaran 2027 / 2028</div>
+    <div class="hero-arabic">اهلا و سهلا</div>
+    <h1>Pendaftaran Santri Baru<br>PPTQ Darus Salam</h1>
+    <p class="sub">Mojogedang · Karanganyar · Jawa Tengah</p>
+    <p class="alamat">Rt 003/012 Pojok, Mojogedang, Karanganyar</p>
+    <span class="tagline">Mencetak generasi Hafidz, Alim, Berakhlaqul Karimah &amp; Mandiri</span>
+  </div>
+</section>
+
+<!-- MAIN -->
+<main>
+<div class="wrap">
+
+  <!-- COUNTDOWN -->
+  <div class="kartu reveal" style="text-align:center">
+    <div class="sek-judul" style="justify-content:center">⏳ Pendaftaran Ditutup Dalam</div>
+    <div class="countdown">
+      <div class="cd-box"><div class="cd-val" id="cdHari">--</div><div class="cd-lab">Hari</div></div>
+      <div class="cd-box"><div class="cd-val" id="cdJam">--</div><div class="cd-lab">Jam</div></div>
+      <div class="cd-box"><div class="cd-val" id="cdMnt">--</div><div class="cd-lab">Menit</div></div>
+      <div class="cd-box"><div class="cd-val" id="cdDtk">--</div><div class="cd-lab">Detik</div></div>
+    </div>
+  </div>
+
+  <!-- SELAMAT DATANG + FITUR -->
+  <div class="kartu reveal">
+    <div class="sek-judul">✨ Selamat Datang di Portal PSB Online</div>
+    <p class="sek-sub">Daftarkan putra-putri Anda dengan mudah, cepat, dan langsung dari HP.</p>
+    <div class="fitur-grid">
+      <div class="fitur-item">
+        <span class="fitur-ikon">📝</span>
+        <div><h4>Pengisian Mudah</h4><p>Formulir 4 langkah, ramah smartphone</p></div>
+      </div>
+      <div class="fitur-item">
+        <span class="fitur-ikon">📤</span>
+        <div><h4>Upload Berkas</h4><p>Langsung dari kamera atau galeri HP</p></div>
+      </div>
+      <div class="fitur-item">
+        <span class="fitur-ikon">💬</span>
+        <div><h4>Notifikasi WA</h4><p>Nomor pendaftaran via WhatsApp</p></div>
+      </div>
+      <div class="fitur-item">
+        <span class="fitur-ikon">🔍</span>
+        <div><h4>Cek Status</h4><p>Pantau pendaftaran kapan saja</p></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BIAYA -->
+  <div class="kartu reveal">
+    <div class="sek-judul">💰 Biaya Pendaftaran</div>
+    <div class="biaya-box">
+      <span class="biaya-ikon">💳</span>
+      <div>
+        <div class="biaya-nominal">Rp 200.000</div>
+        <div class="biaya-sub">Dibayarkan setelah mengisi formulir.<br>Tata cara pembayaran via WhatsApp panitia.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BERKAS -->
+  <div class="kartu reveal">
+    <div class="sek-judul">📋 Berkas yang Diperlukan</div>
+    <p class="sek-sub">Siapkan terlebih dahulu sebelum mengisi formulir.</p>
+    <ul class="berkas-list">
+      <li><span class="check">✓</span> Foto / Scan Akte Kelahiran</li>
+      <li><span class="check">✓</span> Foto / Scan Kartu Keluarga (KK)</li>
+      <li><span class="check">✓</span> Foto Calon Santri (terbaru)</li>
+      <li><span class="check">✓</span> Foto / Scan Ijazah atau SKL</li>
+    </ul>
+  </div>
+
+  <!-- CARA DAFTAR -->
+  <div class="kartu reveal">
+    <div class="sek-judul">🗺 Cara Mendaftar</div>
+    <br>
+    <div class="step-wrap">
+      <div class="step-num">1</div>
+      <div class="step-body"><h3>Siapkan berkas</h3><p>Foto atau scan dokumen yang dibutuhkan.</p></div>
+    </div>
+    <div class="step-garis"></div>
+    <div class="step-wrap">
+      <div class="step-num">2</div>
+      <div class="step-body"><h3>Isi formulir online</h3><p>4 langkah: Data Santri → Orang Tua → Upload → Konfirmasi.</p></div>
+    </div>
+    <div class="step-garis"></div>
+    <div class="step-wrap">
+      <div class="step-num">3</div>
+      <div class="step-body"><h3>Terima nomor pendaftaran</h3><p>Panitia mengirim nomor via WhatsApp.</p></div>
+    </div>
+    <div class="step-garis"></div>
+    <div class="step-wrap">
+      <div class="step-num">4</div>
+      <div class="step-body"><h3>Lakukan pembayaran</h3><p>Rp200.000 sesuai arahan panitia, lalu konfirmasi.</p></div>
+    </div>
+  </div>
+
+  <!-- BROSUR -->
+  <div class="kartu reveal">
+    <div class="sek-judul">📄 Download Brosur PSB</div>
+    <p class="sek-sub">Pilih brosur sesuai jenjang yang dituju.</p>
+    <div class="brosur-grid">
+      <a class="brosur-btn" href="https://psbdarussalam.my.id" target="_blank">
+        <span class="ikon">👦</span>
+        <span><strong>SMP / Wustho</strong><span class="label">Putra</span></span>
+        <span>⬇️</span>
+      </a>
+      <a class="brosur-btn" href="https://psbdarussalam.my.id" target="_blank">
+        <span class="ikon">👧</span>
+        <span><strong>SMP / Wustho</strong><span class="label">Putri</span></span>
+        <span>⬇️</span>
+      </a>
+      <a class="brosur-btn" href="https://psbdarussalam.my.id" target="_blank">
+        <span class="ikon">🧑</span>
+        <span><strong>SMA / Ulya</strong><span class="label">Putra</span></span>
+        <span>⬇️</span>
+      </a>
+      <a class="brosur-btn" href="https://psbdarussalam.my.id" target="_blank">
+        <span class="ikon">👩</span>
+        <span><strong>SMA / Ulya</strong><span class="label">Putri</span></span>
+        <span>⬇️</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- CEK STATUS -->
+  <a class="cek-box reveal" href="https://psbdarussalam.my.id/konfirmasi.php" target="_blank">
+    <span class="cek-ikon">🔍</span>
+    <div class="cek-teks">
+      <h4>Sudah Mendaftar?</h4>
+      <p>Cek status &amp; konfirmasi pembayaran di sini</p>
+    </div>
+    <span class="cek-arrow">›</span>
+  </a>
+
+  <!-- TOMBOL UTAMA -->
+  <div class="btn-row reveal">
+    <a class="btn btn-hijau" href="https://psbdarussalam.my.id/formulir.php">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+      Mulai Pendaftaran Sekarang
+    </a>
+    <a class="btn btn-wa" href="https://wa.me/6285704292385?text=Assalamualaikum, saya ingin bertanya tentang PSB PPTQ Darus Salam" target="_blank" rel="noopener">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 00-8.6 15L2 22l5.2-1.4A10 10 0 1012 2zm0 2a8 8 0 016.9 12l-.4.6 1 3.5-3.6-1-.6.4A8 8 0 1112 4zm-3.3 4c-.2 0-.5.1-.7.4-.3.3-.9 1-.9 2s.7 2.1.8 2.2c.1.2 1.4 2.2 3.4 3 1.7.7 2 .6 2.4.5.4 0 1.2-.4 1.4-1 .2-.5.2-1 .1-1.1 0-.1-.2-.2-.4-.3l-1.4-.7c-.2-.1-.4-.1-.5.1l-.6.8c-.1.2-.3.2-.5.1-.2-.1-.9-.4-1.7-1.1-.6-.6-1-1.2-1.1-1.4-.1-.2 0-.4.1-.5l.4-.5c.1-.2.2-.3.3-.5 0-.2 0-.3-.1-.4l-.6-1.5c-.2-.4-.3-.4-.5-.4z"/></svg>
+      Hubungi Panitia via WhatsApp
+    </a>
+  </div>
+
+  <!-- KONTAK -->
+  <div class="kartu reveal" style="margin-top:16px">
+    <div class="kontak-box">
+      <span class="k-ikon">📍</span>
+      <div>
+        <div class="k-label">ALAMAT</div>
+        <div class="k-val">Rt 003/012 Pojok, Mojogedang, Karanganyar, Jawa Tengah</div>
+      </div>
+    </div>
+    <hr class="soft">
+    <div class="kontak-box">
+      <span class="k-ikon">📱</span>
+      <div>
+        <div class="k-label">WHATSAPP PANITIA</div>
+        <div class="k-val">+62 857-0429-2385</div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /wrap -->
+</main>
+
+<footer>
+  <strong>PPTQ Darus Salam Mojogedang</strong><br>
+  &copy; 2026 — Portal PSB Online
+</footer>
+
+<script>
+// Countdown ke 31 Maret 2027 (sesuaikan tanggal tutup PSB)
+(function(){
+  var target = new Date('2027-03-31T23:59:59');
+  function update(){
+    var now = new Date(), diff = target - now;
+    if(diff <= 0){ document.querySelector('.countdown').innerHTML='<b>Pendaftaran telah ditutup.</b>'; return; }
+    var h=Math.floor(diff/3600000), d=Math.floor(h/24); h=h%24;
+    var m=Math.floor((diff%3600000)/60000), s=Math.floor((diff%60000)/1000);
+    document.getElementById('cdHari').textContent = d;
+    document.getElementById('cdJam').textContent = String(h).padStart(2,'0');
+    document.getElementById('cdMnt').textContent = String(m).padStart(2,'0');
+    document.getElementById('cdDtk').textContent = String(s).padStart(2,'0');
+  }
+  update(); setInterval(update, 1000);
+})();
+
+// Scroll reveal
+(function(){
+  var els = document.querySelectorAll('.reveal');
+  if('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('on'); io.unobserve(e.target); } });
+    },{threshold:.12, rootMargin:'0px 0px -30px 0px'});
+    els.forEach(function(e){ io.observe(e); });
+  } else {
+    els.forEach(function(e){ e.classList.add('on'); });
+  }
+})();
+</script>
+</body>
+</html>
