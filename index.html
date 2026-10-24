@@ -156,6 +156,22 @@ hr.soft{border:none;border-top:1px solid var(--garis);margin:16px 0}
 footer{text-align:center;padding:28px 16px 40px;font-size:13px;color:var(--redup)}
 footer strong{color:var(--hijau)}
 
+/* ===== ORNAMEN ISLAMI ===== */
+.ornamen-divider{display:flex;align-items:center;justify-content:center;gap:10px;
+  margin:20px 0 0;color:var(--emas);opacity:.9}
+.ornamen-divider::before,.ornamen-divider::after{content:'';height:1px;flex:1;
+  max-width:120px;background:linear-gradient(90deg,transparent,var(--emas),transparent)}
+.ornamen-divider svg{flex-shrink:0}
+
+.hero{position:relative}
+.hero-ornamen{position:absolute;bottom:44px;left:0;right:0;display:flex;
+  justify-content:center;opacity:.25;pointer-events:none}
+.kartu{position:relative;overflow:hidden}
+.kartu::before{content:'';position:absolute;top:0;right:0;width:72px;height:72px;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 72 72'%3E%3Cg fill='none' stroke='%23059669' stroke-opacity='.12' stroke-width='1.5'%3E%3Crect x='18' y='18' width='36' height='36'/%3E%3Crect x='18' y='18' width='36' height='36' transform='rotate(45 36 36)'/%3E%3Ccircle cx='36' cy='36' r='8'/%3E%3C/g%3E%3C/svg%3E") no-repeat top right/72px 72px;
+  pointer-events:none}
+.kartu>*{position:relative;z-index:1}
+
 /* ===== ANIMASI REVEAL ===== */
 .reveal{opacity:0;transform:translateY(20px);transition:opacity .5s ease,transform .5s ease}
 .reveal.on{opacity:1;transform:none}
@@ -187,6 +203,24 @@ footer strong{color:var(--hijau)}
     <p class="sub">Mojogedang · Karanganyar · Jawa Tengah</p>
     <p class="alamat">Rt 003/012 Pojok, Mojogedang, Karanganyar</p>
     <span class="tagline">Mencetak generasi Hafidz, Alim, Berakhlaqul Karimah &amp; Mandiri</span>
+    <div class="hero-ornamen" aria-hidden="true">
+      <svg width="220" height="28" viewBox="0 0 220 28" fill="none" stroke="#fff" stroke-width="1.5" opacity=".9">
+        <path d="M0 14h70M150 14h70"/>
+        <g transform="translate(110 14)">
+          <rect x="-8" y="-8" width="16" height="16"/>
+          <rect x="-8" y="-8" width="16" height="16" transform="rotate(45)"/>
+          <circle r="2.5" fill="#fff" stroke="none"/>
+        </g>
+        <g transform="translate(88 14) scale(.55)">
+          <rect x="-8" y="-8" width="16" height="16"/>
+          <rect x="-8" y="-8" width="16" height="16" transform="rotate(45)"/>
+        </g>
+        <g transform="translate(132 14) scale(.55)">
+          <rect x="-8" y="-8" width="16" height="16"/>
+          <rect x="-8" y="-8" width="16" height="16" transform="rotate(45)"/>
+        </g>
+      </svg>
+    </div>
   </div>
 </section>
 
@@ -351,6 +385,15 @@ footer strong{color:var(--hijau)}
 </main>
 
 <footer>
+  <div class="ornamen-divider" aria-hidden="true" style="margin:0 0 14px">
+    <svg width="120" height="20" viewBox="0 0 120 20" fill="none" stroke="currentColor" stroke-width="1.5">
+      <path d="M0 10h40M80 10h40"/>
+      <g transform="translate(60 10)">
+        <rect x="-6" y="-6" width="12" height="12"/>
+        <rect x="-6" y="-6" width="12" height="12" transform="rotate(45)"/>
+      </g>
+    </svg>
+  </div>
   <strong>PPTQ Darus Salam Mojogedang</strong><br>
   &copy; 2026 — Portal PSB Online
 </footer>
